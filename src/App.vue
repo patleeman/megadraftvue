@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <h1>Megadraft Test</h1>
+    <p>
+      Test rendering a react library inside a Vue.js component.
+    </p>
     <mega-draft></mega-draft>
   </div>
 </template>
