@@ -13,7 +13,7 @@ class App extends React.Component {
   constructor (props) {
     super(props)
     this.state = {editorState: editorStateFromRaw(null)}
-    this.onChange = this.onChange.bind()
+    this.onChange = this.onChange.bind(this)
   }
 
   onChange (editorState) {
@@ -21,12 +21,7 @@ class App extends React.Component {
   }
 
   render () {
-    return React.createElement(MegadraftEditor, {editorState: this.state.editorState, onChange: this.onChange}, null)
-    // return (
-    //   <MegadraftEditor
-    //     editorState={this.state.editorState}
-    //     onChange={this.onChange}/>
-    // )
+    return React.createElement(MegadraftEditor, {editorState: this.state.editorState, onChange: this.onChange})
   }
 }
 
@@ -37,10 +32,6 @@ export default {
       React.createElement(App),
       document.getElementById('megadraft')
     )
-    // ReactDOM.render(
-    //   <App />,
-    //   document.getElementById('megadraft')
-    // )
   },
   data () {
     return {
